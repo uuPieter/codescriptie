@@ -54,7 +54,7 @@ pythiaEvent::pythiaEvent(double pthat, unsigned int tune, double rapMin, double 
   pythia.readString("Beams:eCM = 5020.");
   if(process_==0)      pythia.readString("HardQCD:all = on");
   else if(process_==1) pythia.readString("PromptPhoton:all = on");
-  pythia.readString(Form("PhaseSpace:pTHatMin = %.1f",pthat_));
+  pythia.readString("PhaseSpace:pTHatMin = 25");
   pythia.readString("Next:numberShowInfo = 0");
   pythia.readString("Next:numberShowProcess = 0");
   pythia.readString("Next:numberShowEvent = 0");

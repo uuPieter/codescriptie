@@ -60,6 +60,7 @@ public:
 
   /// return true if events are generated using massless particles
   bool massless() const { return _massless;}
+  
 
   /// returns a description of what the EventMixer does (useful for bookkeeping)
   std::string description() const;

@@ -25,10 +25,10 @@ int main (int argc, char ** argv)
  
   CmdLine cmdline(argc,argv);
   // inputs read from command line
-  unsigned int nEvent = cmdline.value<unsigned int>("-nev",1);  // first argument: command line option; second argument: default value
+  //unsigned int nEvent = cmdline.value<unsigned int>("-nev",1);  // first argument: command line option; second argument: default value
  
   // Number of events, generated and listed ones.
-  //unsigned int nEvent    = 10000;
+  unsigned int nEvent    = 50000;
 
   //event generator settings
   double       ptHat = cmdline.value<double>("-pthat",120);//120.;
@@ -42,11 +42,11 @@ int main (int argc, char ** argv)
   Bar.SetStyle(-1);
 
   //output text file
-  ofstream fout;
+  ofstream fout("Pythiaevents");
   const char *dir = getenv("PWD");//"/eos/user/m/mverweij/JetWorkshop2017/samples/";
   TString outFileName = Form("%s/PythiaEventsTune%dPtHat%.0f.pu14",dir,tune,ptHat);
   
-  fout.open(outFileName.Data());
+  
   
   unsigned int entryDiv = (nEvent > 200) ? nEvent / 200 : 1;
   for(unsigned int ie = 0; ie < nEvent; ie++) {
